@@ -40,7 +40,7 @@ int is_command_exist(char *command)
             dir = strtok(NULL, ":");
         }
 
-        free(path_copy);
+	//   free(path_copy);
     }
 
     return 0;

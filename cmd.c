@@ -11,12 +11,12 @@ void command_line_interpreter(int argc, char *argv[])
     ssize_t len_buff;
     size_t size = 0;
 
-    if (argc > 1) 
+     if (argc > 1) 
     {
-        process_command(argv[1]);
-    } 
-    else 
-    {
+      process_command(argv[1]);
+     } 
+     else 
+      {
         while (1) 
         {
             printf("Enter command $: ");
@@ -27,15 +27,21 @@ void command_line_interpreter(int argc, char *argv[])
             {
                 printf("\nExiting...\n");
                 break;
-            }
-
+	    }
+	    //handles also the return Key, which shoud not be the case.
             if (len_buff > 0 && user_input[len_buff - 1] == '\n')
-                user_input[len_buff - 1] = '\0';
+	      {
+		user_input[len_buff - 1] = '\0';
 
             process_command(user_input);
+	      }
+	    if (len_buff == 0)
+	      {
+		continue;
+	      }
         }
 
-        free(user_input);
-    }
+	   free(user_input);
+	 }
 }
 

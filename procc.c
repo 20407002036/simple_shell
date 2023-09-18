@@ -8,7 +8,12 @@
 void process_command(char *user_input)
 {
     char *argvPP[100];
-
+    // have an if block that makes sure that these are not printed in case of a space ' ' input.
+    if (*user_input == ' ')     {
+	
+    }
+       else
+        { 
     tokenize(user_input, argvPP);
     printf("Input command: %s\n", user_input);
 
@@ -23,6 +28,8 @@ void process_command(char *user_input)
         else 
             printf("Command '%s' does not exist in the PATH.\n", argvPP[0]);
     }
+     }
 
-    free_args(argvPP);
+    //  free_args(argvPP);
+    
 }
