@@ -10,7 +10,8 @@ void run_env() {
     int i = 0;
 
     while (environ[i] != NULL) {
-        printf("%s\n", environ[i]);
+        _eputs(environ[i]);
+        _eputs("\n");
         i++;
     }
 }

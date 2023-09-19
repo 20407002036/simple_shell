@@ -21,7 +21,7 @@
 # as follows: "echo $shell_input | ./hsh"
 #
 # It can be empty and multiline
-shell_input="                "
+shell_input="                
 
 ################################################################################
 # The variable 'shell_params' IS OPTIONNAL

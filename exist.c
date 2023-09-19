@@ -10,7 +10,8 @@ int is_command_exist(char *command)
     char *path, *path_copy, *dir;
     char full_path[256];
 
-    if (strchr(command, '/') != NULL)
+    if (custom_strchr(command, '/') != NULL)
+    
     {
         if (access(command, X_OK) == 0)
             return 1;
@@ -25,11 +26,14 @@ int is_command_exist(char *command)
         }
 
         path_copy = strdup(path);
-        dir = strtok(path_copy, ":");
+        dir = custom_strtok(path_copy, ":");
 
         while (dir != NULL) 
         {
-            snprintf(full_path, sizeof(full_path), "%s/%s", dir, command);
+            /* snprintf(full_path, sizeof(full_path), "%s/%s", dir, command);*/
+            strcpy(full_path, dir);
+            strcat(full_path, "/");
+            strcat(full_path, command);
 
             if (access(full_path, X_OK) == 0) 
             {
@@ -37,10 +41,10 @@ int is_command_exist(char *command)
                 return 1;
             }
 
-            dir = strtok(NULL, ":");
+            dir = custom_strtok(NULL, ":");
         }
 
-	//   free(path_copy);
+        free(path_copy);
     }
 
     return 0;

@@ -9,5 +9,6 @@
 void print_hello_world(void)
 {
     char *message = "RUNNING...($(SHELL:))";
-    printf("%s\n", message);
+    _eputs(message);
+    _eputs("\n");
 }

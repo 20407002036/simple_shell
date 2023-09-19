@@ -5,8 +5,8 @@
 *
 */
 
-void run_exit()
+void run_exit(int status)
 {
-    printf("Exiting shell.\n");
-    exit(0);
+    _eputs("Exiting shell.\n");
+    exit(status);
 }

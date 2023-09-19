@@ -12,16 +12,16 @@ void tokenize(char *str, char *argv[])
     const char *token;
     int i = 0;
 
-    token = strtok(str, delimiters);
+    token = custom_strtok(str, delimiters);
 
     if (token == NULL)
         return;
 
     while (token != NULL)
     {
-        argv[i] = strdup(token);
+        argv[i] = custom_strdup(token);
         i++;
-        token = strtok(NULL, delimiters);
+        token = custom_strtok(NULL, delimiters);
     }
 
     argv[i] = NULL;
