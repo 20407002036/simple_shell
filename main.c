@@ -19,7 +19,7 @@ int main(int argc, char *argv[], char *envp[])
         while (1) {
             _eputs("Enter command $: ");
 
-            len_buff = custom_getline(&user_input, &size, stdin);
+            len_buff = getline(&user_input, &size, stdin);
 
             if (len_buff == -1) {
                 printf("\nExiting...\n");
