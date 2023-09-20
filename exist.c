@@ -1,51 +1,50 @@
 #include "shell.h"
 
 /**
-* is_command_exist - cheaks if command exist
-* @command: command to run
-* Return: 1 SUCCESS 0 OTHERWISE
-*/
+ * is_command_exist - cheaks if command exist
+ * @command: command to run
+ * Return: 1 SUCCESS 0 OTHERWISE
+ */
 int is_command_exist(char *command)
 {
-    char *path, *path_copy, *dir;
-    char full_path[256];
+	char *path, *path_copy, *dir;
+	char full_path[256];
 
-    if (custom_strchr(command, '/') != NULL)
-    
-    {
-        if (access(command, X_OK) == 0)
-            return 1;
-    } 
-    else 
-    {
-        path = getenv("PATH");
-        if (path == NULL) 
-        {
-            perror("Unable to get PATH env var--");
-            exit(EXIT_FAILURE);
-        }
+	if (custom_strchr(command, '/') != NULL)
 
-        path_copy = strdup(path);
-        dir = custom_strtok(path_copy, ":");
+	{
+		if (access(command, X_OK) == 0)
+			return (1);
+	}
+	else
+	{
+		path = getenv("PATH");
+		if (path == NULL)
+		{
+			perror("Unable to get PATH env var--");
+			exit(EXIT_FAILURE);
+		}
 
-        while (dir != NULL) 
-        {
-            /* snprintf(full_path, sizeof(full_path), "%s/%s", dir, command);*/
-            strcpy(full_path, dir);
-            strcat(full_path, "/");
-            strcat(full_path, command);
+		path_copy = strdup(path);
+		dir = custom_strtok(path_copy, ":");
 
-            if (access(full_path, X_OK) == 0) 
-            {
-                free(path_copy);
-                return 1;
-            }
+		while (dir != NULL)
+		{
+			strcpy(full_path, dir);
+			strcat(full_path, "/");
+			strcat(full_path, command);
 
-            dir = custom_strtok(NULL, ":");
-        }
+			if (access(full_path, X_OK) == 0)
+			{
+				free(path_copy);
+				return (1);
+			}
 
-        free(path_copy);
-    }
+			dir = custom_strtok(NULL, ":");
+		}
 
-    return 0;
+		free(path_copy);
+	}
+
+	return (0);
 }

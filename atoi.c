@@ -1,25 +1,31 @@
 #include "shell.h"
-
-int custom_atoi(const char *str) 
+/*
+ * custom_atoi - changes string to int
+ *
+ * @str: input
+ *
+ * Return: int
+ */
+int custom_atoi(const char *str)
 {
-    int result = 0;
-    int sign = 1; 
+	int result = 0;
+	int sign = 1;
 
 
-    if (*str == '+' || *str == '-') 
-    {
-        if (*str == '-')
-            sign = -1; 
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
 
-        str++; 
-    }
+		str++;
+	}
 
-    
-    while (*str >= '0' && *str <= '9')
-    {
-        result = result * 10 + (*str - '0');
-        str++;
-    }
 
-    return (result * sign); 
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+
+	return (result * sign);
 }
