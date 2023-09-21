@@ -2,6 +2,9 @@
 
 /**
  * main - main program
+ * @argc: int of parameters
+ * @argv: ponter to the args
+ * @envp: pointer to smthng
  * Return: 0 Success Always
  */
 
@@ -40,5 +43,5 @@ int main(int argc, char *argv[], char *envp[])
 		free(user_input);
 	}
 
-	return 0;
+	return (0);
 }

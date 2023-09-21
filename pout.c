@@ -2,9 +2,8 @@
 #include <stdio.h>
 
 /**
- *
  * print_hello_world - prints header file for both
- *
+ * Return: void
  */
 
 void print_hello_world(void)

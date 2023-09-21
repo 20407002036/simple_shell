@@ -1,12 +1,12 @@
 #include "shell.h"
 /*
- * custom_atoi - changes string to int
+ * custom - converst string to int
  *
- * @str: input
+ * @str: pointer to sting
  *
- * Return: int
+ * Return: Always 0 (Success)
  */
-int custom_atoi(const char *str)
+int custom(const char *str)
 {
 	int result = 0;
 	int sign = 1;

@@ -30,11 +30,13 @@ void process_command(char *user_input, char *envp[])
 	} else if (custom_strcmp(argvPP[0], "env") == 0)
 	{
 		run_env();
-	}else if (custom_strcmp(argvPP[0], "ls") == 0)
+	}
+	else if (custom_strcmp(argvPP[0], "ls") == 0)
 	{
-		argvPP[0]=ls_command;
+		argvPP[0] = ls_command;
 		execute_command(ls_command, argvPP, envp);
-	}else if (custom_strcmp(argvPP[0], "setenv") == 0)
+	}
+	else if (custom_strcmp(argvPP[0], "setenv") == 0)
 	{
 		if (argvPP[1] != NULL && argvPP[2] != NULL)
 		{

@@ -11,8 +11,8 @@
 ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 {
 	static char buffer[BUFFER_SIZE];
-	static size_t buffer_pos = 0;
-	static ssize_t buffer_size = 0;
+        size_t buffer_pos = 0;
+         ssize_t buffer_size = 0;
 	ssize_t total_bytes_read = 0;
 	unsigned int line_length = 0;
 	char *line = *lineptr;
@@ -37,7 +37,8 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 		line = *lineptr;
 	}
 
-	while (1) {
+	while (1)
+	  {
 		if (buffer_pos >= (size_t)buffer_size)
 		{
 			buffer_size = (ssize_t)fread(buffer, 1, BUFFER_SIZE, stream);

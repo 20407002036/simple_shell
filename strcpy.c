@@ -1,9 +1,10 @@
 #include "shell.h"
 /*
- * custom_strcpy - custom files
+ * custom_strcpy - custom files for the simple shell project
+ *
  * @dest: pointer to string
  * @src: source
- * Retrun: void
+ * Return: void
  */
 
 void custom_strcpy(char *dest, const char *src)
