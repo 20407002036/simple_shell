@@ -22,15 +22,20 @@ void free_args(char *argv[]);
 void process_command(char *user_input, char *envp[]);
 void run_exit(int status);
 void run_env();
+void run_exit_command(char *arg);
+void run_ls_command(char *envp[]);
+void run_setenv_command(char *args[]);
+void run_unsetenv_command(char *arg);
+
 
 void _eputs(char *str);
 int _eputchar(char c);
 
 int custom_strcmp(const char *str1, const char *str2);
-char *custom_strchr(const char *str, char c);
-char *custom_strcat(char *dest, const char *src);
-char *custom_strdup(const char *str);
-char *custom_strtok(char *str, const char *delim);
+char custom_strchr(const char *str, char c);
+char custom_strcat(char *dest, const char *src);
+char custom_strdup(const char *str);
+char custom_strtok(char *str, const char *delim);
 void custom_strcpy(char *dest, const char *src);
 int custom_atoi(const char *str);
 

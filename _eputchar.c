@@ -1,7 +1,6 @@
 #include "shell.h"
 
-/*
- *
+/**
  * _eputchar- output char
  * @c: character
  * Return: int
