@@ -4,6 +4,7 @@
  * free_data - frees data structure
  *
  * @datash: data structure
+ *
  * Return: void
  */
 void free_data(data_shell *datash)
@@ -23,6 +24,7 @@ void free_data(data_shell *datash)
  * set_data - Initialize data structure
  *
  * @datash: data structure
+ *
  * @av: argument vector
  *
  * Return: void
@@ -55,6 +57,7 @@ void set_data(data_shell *datash, char **av)
  * main - calls the rest of the functions
  *
  * @ac: No of argument
+ *
  * @av: argument vector
  *
  * Return: 0 (success).
