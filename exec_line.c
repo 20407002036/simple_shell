@@ -5,7 +5,7 @@
  *
  * @datash: data relevant arguements
  *
- * Return: 1 (Success)
+ * Return: 1 (Success) 0 (failure)
  */
 int exec_line(data_shell *datash)
 {

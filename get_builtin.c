@@ -2,8 +2,10 @@
 
 /**
  * get_builtin - builtin that pass the command in the arg
+ * 
  * @cmd: command
- * Return: function pointer of the builtin command
+ * 
+ * Return: function pointer of the builtin command 0 (Success) 1 (Failure)
  */
 int (*get_builtin(char *cmd))(data_shell *)
 {

@@ -9,7 +9,7 @@
  *
  * @value: value (env or alias)
  *
- * Return: new env or alias.
+ * Return: new env or alias. Chars
  */
 char *copy_info(char *name, char *value)
 {
@@ -37,7 +37,7 @@ char *copy_info(char *name, char *value)
  *
  * @datash: data structure (environ)
  *
- * Return: no return
+ * Return: no return (Void)
  */
 void set_env(char *name, char *value, data_shell *datash)
 {

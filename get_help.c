@@ -2,8 +2,10 @@
 
 /**
  * get_help - function that retrieves help messages according builtin
+ * 
  * @datash: data structure (args and input)
- * Return: Return 0
+ * 
+ * Return: 0 (Success) 1 (Failure)
 */
 int get_help(data_shell *datash)
 {
