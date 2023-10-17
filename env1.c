@@ -45,7 +45,6 @@ char *_getenv(const char *name, char **_environ)
 	mov = 0;
 	for (i = 0; _environ[i]; i++)
 	{
-	
 		mov = cmp_env_name(_environ[i], name);
 		if (mov)
 		{
